@@ -239,6 +239,116 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* Payroll */
+.payroll {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--pad);
+  min-height: 0;
+  margin-top: clamp(24px, 5vh, 48px);
+}
+
+.forms {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--pad);
+}
+
+.panel {
+  --control: 2.5rem;
+  display: grid;
+  align-items: end;
+  gap: var(--pad);
+  padding: var(--pad);
+  border: 1px solid var(--black);
+}
+
+.panel--add {
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+}
+
+.panel--delete {
+  grid-template-columns: 1fr auto;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.panel input {
+  width: 100%;
+  height: var(--control);
+  border: 0;
+  border-bottom: 1px solid var(--black);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 1.25rem;
+  color: inherit;
+}
+
+.panel input:focus {
+  box-shadow: 0 1px 0 var(--black);
+}
+
+.panel .button {
+  height: var(--control);
+}
+
+.table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--black);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px var(--pad);
+  text-align: left;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  box-shadow: 0 1px 0 var(--black);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+td {
+  overflow-wrap: anywhere;
+}
+
+tbody tr + tr td {
+  border-top: 1px solid var(--gray);
+}
+
+.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .forms {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Mobile */
 @media (max-width: 800px) {
   .labels,
@@ -314,6 +424,41 @@ body {
 
   .results .result {
     text-align: right;
+  }
+    .payroll {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .forms {
+    gap: 12px;
+  }
+
+  .panel {
+    --control: 2.25rem;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .panel--add {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .group--wide {
+    grid-column: 1 / -1;
+  }
+
+  .panel input {
+    font-size: 1rem;
+  }
+
+  table {
+    min-width: 720px;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
   }
 }
 

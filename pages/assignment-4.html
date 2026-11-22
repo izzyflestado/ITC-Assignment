@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment #4 - Simple Payroll</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="home" href="../index.html" aria-label="Home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </a>
+    <span class="name">Romar Izzy P. Flestado &nbsp; &nbsp; &nbsp; BSCS-1B</span>
+  </header>
+
+  <main class="page">
+
+    <h1 class="page-title">Assignment #4 - Simple Payroll</h1>
+    <p class="page-text">Adds and deletes employees in a payroll list.</p>
+
+    <div class="payroll">
+
+      <div class="forms">
+
+        <form class="panel panel--add" id="add-form">
+
+          <label class="group group--wide">
+            <span class="box-label">Employee Name</span>
+            <input id="employee-name" type="text" maxlength="40" pattern=".*\S.*" placeholder="Name" required>
+          </label>
+
+          <label class="group">
+            <span class="box-label">Days Worked</span>
+            <input id="days" type="text" inputmode="numeric" maxlength="3" placeholder="0" required>
+          </label>
+
+          <label class="group">
+            <span class="box-label">Daily Rate</span>
+            <input id="rate" type="text" inputmode="decimal" placeholder="0" required>
+          </label>
+
+          <label class="group">
+            <span class="box-label">Deduction Amount</span>
+            <input id="deduction" type="text" inputmode="decimal" placeholder="0">
+          </label>
+
+          <button class="button" type="submit">Add</button>
+
+        </form>
+
+        <form class="panel panel--delete" id="delete-form">
+
+          <label class="group">
+            <span class="box-label">Line No.</span>
+            <input id="line" type="text" inputmode="numeric" maxlength="4" placeholder="0" required>
+          </label>
+
+          <button class="button" type="submit">Delete</button>
+
+        </form>
+
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Employee Name</th>
+              <th class="num">Days Worked</th>
+              <th class="num">Daily Rate</th>
+              <th class="num">Gross Pay</th>
+              <th class="num">Deduction Amount</th>
+              <th class="num">Net Pay</th>
+            </tr>
+          </thead>
+          <tbody id="payroll-body"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../js/assignment-4.js"></script>
+</body>
+</html>
