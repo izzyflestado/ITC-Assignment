@@ -160,6 +160,40 @@ body {
   gap: clamp(12px, 3vh, 32px);
 }
 
+.field {
+  display: flex;
+  align-items: stretch;
+  gap: var(--pad);
+}
+
+.field input {
+  flex: 1;
+  min-width: 0;
+}
+
+.button {
+  padding: 0 24px;
+  border: 1px solid var(--black);
+  border-radius: 0;
+  background: var(--white);
+  font: inherit;
+  font-size: 1rem;
+  color: var(--black);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.button:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--pad);
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -254,4 +288,32 @@ body {
   .result {
     font-size: 1.25rem;
   }
+
+  .field {
+    gap: 12px;
+  }
+
+  .button {
+    padding: 0 16px;
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .results .box {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .results .box-label {
+    grid-column: auto;
+  }
+
+  .results .result {
+    text-align: right;
+  }
 }
+

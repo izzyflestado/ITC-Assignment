@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment #3 - Factorial</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="home" href="../index.html" aria-label="Home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </a>
+    <span class="name">Romar Izzy P. Flestado &nbsp; &nbsp; &nbsp; BSCS-1B</span>
+  </header>
+
+  <main class="page">
+
+    <h1 class="page-title">Assignment #3 - Factorial</h1>
+    <p class="page-text">Computes the factorial, sum, and average of the first n numbers.</p>
+
+    <div class="boxes boxes--row">
+
+      <form class="box" id="form">
+        <label class="box-label" for="n">Integer n</label>
+        <div class="field">
+          <input id="n" type="text" inputmode="numeric" maxlength="7" placeholder="0">
+          <button class="button" type="submit">Compute</button>
+        </div>
+      </form>
+
+      <div class="results">
+
+        <div class="box">
+          <span class="box-label">Factorial (While Loop)</span>
+          <span class="result" id="factorial">—</span>
+        </div>
+
+        <div class="box">
+          <span class="box-label">Sum (Do While Loop)</span>
+          <span class="result" id="sum">—</span>
+        </div>
+
+        <div class="box">
+          <span class="box-label">Average (For Loop)</span>
+          <span class="result" id="average">—</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../js/assignment-3.js"></script>
+</body>
+</html>
