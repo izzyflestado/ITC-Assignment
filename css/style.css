@@ -7,6 +7,8 @@
   --pad: 24px;
   --font: "Geist", sans-serif;
 
+  --top: clamp(24px, 8vh, 80px);
+
   --big: clamp(1.5rem, min(6vh, 5vw), 4rem);
 }
 
@@ -46,13 +48,14 @@ body {
   border-bottom-color: var(--black);
 }
 
-/* Content: */
+/* ---------- Dashboard ---------- */
+
 .content {
   display: flex;
   flex: 1;
   flex-direction: column;
   min-height: 0;
-  padding: clamp(24px, 8vh, 80px) 0 var(--pad);
+  padding: var(--top) 0 var(--pad);
 }
 
 .labels,
@@ -66,6 +69,7 @@ body {
 .labels {
   padding-bottom: 12px;
   font-size: 0.75rem;
+  line-height: 1rem; 
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -79,7 +83,7 @@ body {
 
 .row {
   flex: 1;
-  align-items: center; 
+  align-items: center;
   min-height: 0;
   border-top: 1px solid var(--gray);
   color: inherit;
@@ -115,8 +119,88 @@ body {
   opacity: 1;
 }
 
-/* Mobile */
+/* ---------- Assignment pages ---------- */
+
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  padding: calc(var(--top) + 1rem - var(--big) * 1.1) var(--pad) var(--pad);
+}
+
+.page-title {
+  font-size: var(--big);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.page-text {
+  font-size: 1rem;
+}
+
+.boxes {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--pad);
+  min-height: 0;
+  margin-top: var(--pad);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 0;
+  padding: var(--pad);
+  border: 1px solid var(--black);
+}
+
+.box-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.box input {
+  width: 100%;
+  padding-bottom: 8px;
+  border: 0;
+  border-bottom: 1px solid var(--black);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: clamp(1.25rem, 4vh, 2rem);
+  color: inherit;
+  appearance: textfield; 
+}
+
+.box input::-webkit-outer-spin-button,
+.box input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Focus */
+.box input:focus {
+  box-shadow: 0 1px 0 var(--black);
+}
+
+.result {
+  font-size: clamp(1.25rem, 4vh, 2rem);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Mobile ---------- */
+
 @media (max-width: 800px) {
+  /* Dashboard */
   .labels,
   .row {
     grid-template-columns: 1fr 3fr;
@@ -124,5 +208,34 @@ body {
 
   .preview {
     display: none;
+  }
+
+  /* Assignment pages */
+  .page {
+    gap: 8px;
+  }
+
+  .boxes {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    gap: 6px var(--pad);
+    padding: 12px;
+  }
+
+  .box-label {
+    grid-column: 1 / -1;
+  }
+
+  .box input,
+  .result {
+    font-size: 1.25rem;
   }
 }
