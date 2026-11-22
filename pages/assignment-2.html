@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment #2 - Income Tax Calculator</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="home" href="../index.html" aria-label="Home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </a>
+    <span class="name">Romar Izzy P. Flestado &nbsp; &nbsp; &nbsp; BSCS-1B</span>
+  </header>
+
+  <main class="page">
+
+    <h1 class="page-title">Assignment #2 - Income Tax Calculator</h1>
+    <p class="page-text">Computes the income tax from a taxable income.</p>
+
+    <div class="boxes boxes--row">
+
+      <div class="box">
+        <label class="box-label" for="income">Taxable Income</label>
+        <input id="income" type="text" inputmode="decimal" placeholder="0">
+      </div>
+
+      <div class="box">
+        <span class="box-label">Income Tax</span>
+        <span class="result" id="tax">—</span>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../js/assignment-2.js"></script>
+</body>
+</html>
