@@ -1,16 +1,18 @@
 const conversions = {
-  "c-to-f": { convert: (c) => (c * 9) / 5 + 32, unit: "°F" },
-  "f-to-c": { convert: (f) => ((f - 32) * 5) / 9, unit: "°C" },
-  "m-to-ft": { convert: (m) => m * 3.28084, unit: "ft" },
-  "ft-to-m": { convert: (ft) => ft / 3.28084, unit: "m" },
+  "c-to-f": { convert: (c) => (c * 9) / 5 + 32, unit: "°F", allowNegative: true },
+  "f-to-c": { convert: (f) => ((f - 32) * 5) / 9, unit: "°C", allowNegative: true },
+  "m-to-ft": { convert: (m) => m * 3.28084, unit: "ft", allowNegative: false },
+  "ft-to-m": { convert: (ft) => ft / 3.28084, unit: "m", allowNegative: false },
 };
-
-const blockedKeys = ["e", "E", "+", "-"];
 
 document.querySelectorAll(".box").forEach((box) => {
   const input = box.querySelector("input");
   const result = box.querySelector(".result");
-  const { convert, unit } = conversions[box.dataset.type];
+  const { convert, unit, allowNegative } = conversions[box.dataset.type];
+
+ const blockedKeys = allowNegative ? ["e", "E", "+"] : ["e", "E", "+", "-"];
+ const validPaste = allowNegative ? /^-?\d*\.?\d*$/ : /^\d*\.?\d*$/;
+
 
   input.addEventListener("keydown", (event) => {
     if (blockedKeys.includes(event.key)) {
